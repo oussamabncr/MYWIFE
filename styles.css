@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url(backfround.jpg) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* لون خلفية مربع النص */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#countdown-container {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* لون خلفية مربع العداد */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+}
+
+#countdown {
+    font-size: 48px; /* حجم العداد */
+    font-weight: bold; /* زيادة سمك الأرقام */
+    color: #e74c3c; /* لون العداد */
+    font-family: 'Courier New', monospace; /* نوع الخط */
+    letter-spacing: 5px; /* تباعد بين الأرقام */
+}
+
+h1 {
+    font-size: 36px;
+    color: #e74c3c; /* لون القلب */
+}
+
+h1 .heart {
+    color: #e74c3c; /* لون القلب */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333; /* لون النص */
+}
+
+p .heart {
+    color: #e74c3c; /* لون القلب */
+}

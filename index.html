@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ياا هلااا بأميييرتيي</title>
+</head>
+<body>
+    <div class="container" id="message-container" style="display: none;">
+        <h1><span class="heart">&#10084;</span> هلا والله بأميرتي <span class="heart">&#10084;</span></h1>
+        <p>عيد ميلاد سعيد، حبيبتي الغالية !ا</p>
+        <p>في هذا اليوم، وُلدتِ أنتِ، نجمة حياتي. اليوم، نحتفل بذكرى قدومك إلى هذا العالم، ولا يمكنني سوى أن أشعر بالامتنان العظيم لأنكِ في حياتي</p>
+        <p>أتمنى لكِ يومًا مليئًا بالسعادة والضحك، حيث يملأ الحب والفرح قلبك. كل عام وأنتِ بأتم الصحة والسعادة!ا</p>
+        <p>عندما أفكر فيكِ، أرى عالمًا مليئًا بالجمال والألوان. أنتِ الزهرة التي تزين حياتي وتجعلها أكثر سعادة</p>
+        <p>شكرًا لكِ على كونكِ الشخص الرائع الذي أنتِ عليه. أعدكِ بأن أكون دائمًا إلى جانبكِ، في الأوقات الجيدة والصعبة</p>
+        <p>أنتِ مصدر إلهام لي، أتمنى أن أكون الشخص الذي تتمنيه. أنتِ تستحقين كل خير في هذا العالم</p>
+        <p>أحبكِ بكل مشاعري، أعدكِ أني سأسعى دوما لأن يجمعنا الله في الحياتين انشاء الله. كل عام وأنتِ بخير وسعادة!ا</p>
+    </div>
+
+    <div id="countdown-container">
+        <p id="countdown"></p>
+    </div>
+
+    <script>
+        // تحديد توقيت الهدف (GMT +1)
+        var targetTimeZone = 'GMT+1';
+
+        var targetDate = new Date('2023-11-23T00:00:00Z');
+        targetDate.setHours(targetDate.getHours() -1); // إضافة ساعة لتوقيت GMT +1
+
+        var countdownInterval = setInterval(updateCountdown, 1000);
+
+        function updateCountdown() {
+            var currentDate = new Date().getTime();
+            var timeRemaining = targetDate - currentDate;
+
+            if (timeRemaining <= 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('message-container').style.display = 'block';
+                document.getElementById('countdown-container').style.display = 'none';
+            } else {
+                document.getElementById('message-container').style.display = 'none';
+                document.getElementById('countdown-container').style.display = 'block';
+                document.getElementById('countdown').innerText = formatTime(timeRemaining);
+            }
+        }
+
+        function formatTime(time) {
+            var hours = Math.floor(time / (1000 * 60 * 60));
+            var minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((time % (1000 * 60)) / 1000);
+            return formatNumber(hours) + ':' + formatNumber(minutes) + ':' + formatNumber(seconds);
+        }
+
+        function formatNumber(number) {
+            return number < 10 ? '0' + number : number;
+        }
+    </script>
+</body>
